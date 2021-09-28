@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "build": "NODE_ENV=production concurrently \"eleventy\" \"tailwindcss --postcss -i css/index.css -o _site/index.css\"",
+    "watch": "NODE_ENV=development concurrently \"eleventy --serve\" \"tailwindcss --postcss -i css/index.css -o _site/index.css --watch\""
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-img": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "concurrently": "^6.2.1",
+    "cssnano": "^5.0.8",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6",
+    "prism-themes": "^1.9.0",
+    "tailwindcss": "^2.2.16",
+    "tailwindcss-debug-screens": "^2.1.0"
+  },
+  "devDependencies": {}
+}

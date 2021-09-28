@@ -1,0 +1,7 @@
+html {
+    @apply text-lg sm:text-xl lg:text-[22px];
+}
+
+body {
+    @apply text-gray-800 dark:bg-gray-900 dark:text-gray-400;
+}

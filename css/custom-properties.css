@@ -1,0 +1,7 @@
+:root {
+    --container-spacing: theme('padding.4');
+
+    @screen xs {
+        --container-spacing: theme('padding.6');
+    }
+}

@@ -1,0 +1,22 @@
+---
+title: Joren Van Hee
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8">
+
+    <title>{{ title }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body class="
+    {{- bodyClass -}}
+    {{- ' debug-screens' if globals.env == 'development' -}}
+">
+    {{ content | safe }}
+</body>
+</html>

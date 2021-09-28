@@ -1,0 +1,10 @@
+.photo-frame {
+    @apply
+        flex justify-center -mx-container px-container py-6 mb-8
+        bg-white border-t border-b dark:border-transparent
+        sm:-mx-1 sm:p-8 sm:border sm:rounded-md;
+
+    img {
+        @apply block w-full;
+    }
+}

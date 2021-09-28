@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="container">
+    <h1 class="t-alpha">
+        Joren Van Hee
+        <span class="text-gray-400 dark:text-gray-500">
+            — Full-Stack Web Developer
+        </span>
+    </h1>
+
+    <h2 class="t-gamma">Blog posts</h2>
+
+    <ul class="-mx-4 grid gap-2">
+        {% for post in collections.posts | reverse %}
+            <li>
+                <a
+                    href="{{ post.url }}"
+                    class="
+                        block w-full p-4 hover:bg-gray-50 dark:hover:bg-gray-800
+                        transition-colors duration-100 rounded-sm
+                        focus-visible:outline-none
+                        focus-visible:ring-2 focus-visible:ring-blue-600
+                        dark:focus-visible:ring-blue-500
+                    "
+                    >
+                    <h3 class="
+                        font-bold leading-snug mb-2 text-lg underline
+                        text-gray-900 dark:text-gray-100
+                    ">
+                        {{ post.data.title }}
+                    </h3>
+                    <p class="
+                        block leading-snug text-gray-700 dark:text-gray-400
+                    ">
+                        {{ post.data.description }}
+                    </p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

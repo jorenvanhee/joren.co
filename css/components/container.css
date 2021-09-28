@@ -1,0 +1,3 @@
+.container {
+    @apply box-content px-container mx-auto sm:max-w-lg;
+}

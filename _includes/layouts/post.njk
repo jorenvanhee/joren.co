@@ -1,0 +1,18 @@
+---
+layout: default
+permalink: "/{{ page.fileSlug }}/index.html"
+---
+
+<div class="container rich-text">
+    <header class="my-4">
+        <a href="/">
+            <span area-hidden="true">←</span>
+            <span class="sr-only">Go back to</span>
+            Joren.co
+        </a>
+    </header>
+
+    <h1 class="t-alpha">{{ title }}</h1>
+
+    {{ content | safe }}
+</div>
