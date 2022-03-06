@@ -1,5 +1,9 @@
 html {
     @apply text-lg sm:text-xl lg:text-[22px];
+
+    /* Default line-height on text-lg class is 1.75rem. For some reason Safari
+     * does 1.75rem * 16px, instead of 1.75rem * 28px (font-size of text-lg). */
+    line-height: 1.75;
 }
 
 body {
