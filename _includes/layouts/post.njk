@@ -15,4 +15,17 @@ permalink: "/{{ page.fileSlug }}/index.html"
     <h1 class="t-alpha">{{ title }}</h1>
 
     {{ content | safe }}
+
 </div>
+
+<footer class="mt-16 pt-8 pb-12 bg-gray-200 dark:bg-gray-800">
+    <div class="container text-sm">
+        <p class="rich-text">
+            Questions, comments or suggestions?<br>
+            <a href="https://github.com/jorenvanhee/joren.co/issues/new?title={{ title }}">Open an issue</a> on GitHub, or contact me via <a href="https://twitter.com/jorenvanhee">Twitter</a>.
+        </p>
+        <p class="sm:text-xs rich-text mt-4">
+            <a href="https://github.com/jorenvanhee/joren.co/edit/main/{{ page.inputPath }}">Edit this page</a>
+        </p>
+    </div>
+</footer>
