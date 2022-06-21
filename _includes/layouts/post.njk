@@ -1,6 +1,7 @@
 ---
 layout: default
 permalink: "/{{ page.fileSlug }}/index.html"
+showFooter: true
 ---
 
 <div class="container rich-text">
@@ -18,6 +19,7 @@ permalink: "/{{ page.fileSlug }}/index.html"
 
 </div>
 
+{% if showFooter %}
 <footer class="mt-16 pt-8 pb-12 bg-gray-200 dark:bg-gray-800">
     <div class="container text-sm">
         <p class="rich-text">
@@ -29,3 +31,4 @@ permalink: "/{{ page.fileSlug }}/index.html"
         </p>
     </div>
 </footer>
+{% endif %}

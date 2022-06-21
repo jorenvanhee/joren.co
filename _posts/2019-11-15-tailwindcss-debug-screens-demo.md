@@ -2,6 +2,7 @@
 layout: post
 title: Tailwind CSS Debug Screens
 hidden: true
+showFooter: false
 bodyClass: debug-screens
 ---
 
