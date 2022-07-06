@@ -81,7 +81,7 @@ The first argument contains all the ingredient values (note that we have to manu
 
 ℹ️  We could add a third argument to provide an array with the columns that should be updated when a matching record is found. In our case they can all be updated, so we can omit this argument.
 
-For the deleting of the missing ingredients, we can use `whereNotIn` combined with `delete`. The delete has to happen before the upsert, otherwise the newly added records will be delete as well.
+For the deleting of the missing ingredients, we can use `whereNotIn` combined with `delete`. The delete has to happen before the upsert, otherwise the newly added records will be deleted as well.
 
 ``` php
 // Delete
