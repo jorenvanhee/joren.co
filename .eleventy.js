@@ -1,12 +1,12 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
 
-const imageShortcode = async (src, alt, sizes) => {
-  const metadata = await Image(src, {
+const imageShortcode = async (src, alt, sizes, options = {}) => {
+  const metadata = await Image(src, Object.assign({
     // Max width is based on the layout container width * 2.
     widths: [400, 800, 1000, 1200, 1450],
     outputDir: './_site/img/',
-  });
+  }, options));
 
   const imageAttributes = {
     alt,
