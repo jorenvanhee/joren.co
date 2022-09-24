@@ -13,7 +13,7 @@
 }
 
 .rich-text {
-    p, ul {
+    p, ul, ol {
         @apply mb-8;
     }
 
@@ -23,6 +23,10 @@
 
     ul {
         @apply list-disc pl-6;
+    }
+
+    ol {
+        @apply list-decimal pl-6;
     }
 
     hr {
