@@ -117,7 +117,7 @@ HasMany::macro('createUpdateOrDelete', function (iterable $records) {
 
 Laravel automatically binds `$this` to the `HasMany` instance. We'll use that together with the records to create an instance of our macro class. We can call the `CreateUpdateOrDelete` instance like a function, since we're going to make it invokable.
 
-In the `CreateUpdateOrDelete` class we wrap the delete and upsert methods in a transaction. Either everything fails, or everything succeeds. And as mentioned before, we execute the delete before the upsert.
+First, let's make sure that the records (ingredients) actually belong to the parent model (recipe). We don't want people passing around id's they don't have access to (thanks Marek for [noticing](https://github.com/jorenvanhee/joren.co/issues/1) this). We will filter out unwanted records in the constructor.
 
 ``` php
 namespace App\Support\Macros;
@@ -133,17 +133,31 @@ class CreateUpdateOrDelete
 
   public function __construct(HasMany $query, iterable $records)
   {
-    $this->query = $query;
-    $this->records = collect($records);
-  }
+    // id (ingredient table)
+    $relatedKeyName = $query->getRelated()->getKeyName();
+    $allowedRecordIds = $query->pluck($relatedKeyName);
 
-  public function __invoke()
-  {
-    DB::transaction(function () {
-      $this->deleteMissingRecords();
-      $this->upsertRecords();
-    });
+    $this->query = $query;
+    $this->records = collect($records)->filter(
+        function ($record) use ($relatedKeyName, $allowedRecordIds) {
+            $id = $record[$relatedKeyName] ?? null;
+
+            return $id === null || $allowedRecordIds->contains($id);
+        }
+    );
   }
+}
+```
+
+In the `__invoke` method we wrap the delete and upsert methods in a transaction. Either everything fails, or everything succeeds. And as mentioned before, we execute the delete before the upsert.
+
+``` php
+public function __invoke()
+{
+  DB::transaction(function () {
+    $this->deleteMissingRecords();
+    $this->upsertRecords();
+  });
 }
 ```
 
