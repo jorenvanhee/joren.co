@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "/sass-burger"
+  to = "https://sass-burger.joren.co/"
+
+[[redirects]]
+  from = "/plsbl/js/script.js"
+  to = "https://plausible.io/js/plausible.js"
+  status = 200
+
+[[redirects]]
+  from = "/plsbl/api/event"
+  to = "https://plausible.io/api/event"
+  status = 200
+  [redirects.headers]
+    Access-Control-Allow-Origin = "*"
