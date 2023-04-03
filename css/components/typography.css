@@ -1,18 +1,39 @@
-.t-alpha {
-    @apply
-        mt-24 mb-16
-        leading-tight text-4xl font-extrabold
-        text-gray-900 dark:text-gray-100;
-}
+@layer components {
+    .t-alpha {
+        @apply
+            mt-24 mb-16
+            leading-tight text-4xl font-extrabold
+            text-gray-900 dark:text-gray-100;
+    }
 
-.t-gamma {
-    @apply
-        uppercase font-extrabold tracking-wide text-xs mb-4
-        text-gray-500 dark:text-gray-400;
+    .t-beta {
+        @apply
+            mt-16 mb-8
+            leading-tight text-2xl font-extrabold
+            text-gray-800 dark:text-gray-200;
+    }
 
+    .t-gamma {
+        @apply
+            uppercase font-extrabold tracking-wide text-xs mt-8 mb-4
+            text-gray-500 dark:text-gray-300;
+
+    }
 }
 
 .rich-text {
+    h1 {
+        @apply t-alpha;
+    }
+
+    h2 {
+        @apply t-beta;
+    }
+
+    h3 {
+        @apply t-gamma;
+    }
+
     p, ul, ol {
         @apply mb-8;
     }
