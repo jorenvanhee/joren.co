@@ -15,7 +15,7 @@
 
     .t-gamma {
         @apply
-            uppercase font-extrabold tracking-wide text-xs mt-8 mb-4
+            uppercase font-extrabold tracking-wide text-xs mt-12 mb-6
             text-gray-500 dark:text-gray-300;
 
     }
