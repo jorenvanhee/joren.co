@@ -112,16 +112,16 @@ The first argument contains all the ingredient values (note that we have to manu
 
 ### Delete
 
-For the deleting of the missing ingredients, we can use `whereNotIn` combined with `delete`. The delete has to happen before the upsert, otherwise the newly added records will be deleted as well.
+For the deleting of the missing ingredients, we can use `whereNotIn` combined with `delete`. The `delete` has to happen before the `updateOrCreate` or `upsert`, otherwise the newly added records will be deleted as well.
 
 ``` php
-// Delete
+// delete
 $recipe
   ->ingredients()
   ->whereNotIn('id', [1, 2, 3])
   ->delete();
 
-// Upsert
+// updateOrCreate or upsert
 // ...
 ```
 
